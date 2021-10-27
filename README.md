@@ -1,6 +1,8 @@
 ## Design by Sheldon，who's salary is 80w per year
 
-本项目采用了一系列Golang中比较流行的组件，可以以本项目为基础快速搭建Restful Web API,例如cloudware这种垃圾
+本项目采用了一系列Golang中比较流行的组件，可以以本项目为基础快速搭建Restful Web API,例如cloudware
+
+based on https://github.com/gourouting/singo
 
 ## 特色
 
@@ -15,7 +17,7 @@
 7. 自行实现了国际化i18n的一些基本功能
 8. 本项目是使用基于cookie实现的session来保存登录状态的，如果需要可以自行修改为token验证
 9. [logrus](https://github.com/sirupsen/logrus) 集成流行的日志工具logrus，并设置gin和gorm都使用logrus打印，默认同时打印到控制台和文件中
-10.[jwt-go](https://github.com/dgrijalva/jwt-go) 在老bei的强力要求下使用jwt-go实现bearer token认证
+10. [jwt-go](https://github.com/dgrijalva/jwt-go) 在老bei的强力要求下使用jwt-go实现bearer token认证
 
 本项目已经预先实现了一些常用的代码方便参考和复用:
 
