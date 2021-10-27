@@ -90,9 +90,10 @@ docker run -d  --net host --env SERVER_PORT=":3003" cloudware:v0.1
 
 
 ## 编译
+```
 使用docker file 两段式编译
 使用安装好sqlite的基础镜像  基于debian:buster-slim 
 进入工程根目录  执行
 docker build -f ./Dockerfile . -t cloudware:v0.1
-
+```
 
