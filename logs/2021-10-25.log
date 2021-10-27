@@ -1,0 +1,135 @@
+time="2021-10-25 15:31:35" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:32\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type='table' AND name=\"users\""
+time="2021-10-25 15:31:35" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/migration.go:8\n[0.000ms] [rows:-] SELECT * FROM `users` LIMIT 1"
+time="2021-10-25 15:31:35" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:253\n[0.022ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type = \"index\" AND tbl_name = \"users\" AND name = \"idx_users_deleted_at\""
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (6 handlers)
+[GIN-debug] POST   /api/v1/ping              --> inspur.com/cloudware/controller.Ping (6 handlers)
+[GIN-debug] GET    /api/v1/testlog           --> inspur.com/cloudware/controller.TestLog (6 handlers)
+[GIN-debug] GET    /api/v1/testpost          --> inspur.com/cloudware/controller.TestPost (6 handlers)
+[GIN-debug] GET    /api/v1/testpoststruct    --> inspur.com/cloudware/controller.TestPost (6 handlers)
+[GIN-debug] POST   /api/v1/user/register     --> inspur.com/cloudware/controller/user.UserRegister (6 handlers)
+[GIN-debug] POST   /api/v1/user/login        --> inspur.com/cloudware/controller/user.UserLogin (6 handlers)
+[GIN-debug] GET    /api/v1/user/me           --> inspur.com/cloudware/controller/user.UserMe (7 handlers)
+[GIN-debug] DELETE /api/v1/user/logout       --> inspur.com/cloudware/controller/user.UserLogout (7 handlers)
+[GIN-debug] Listening and serving HTTP on :3000
+time="2021-10-25 20:16:15" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:32\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type='table' AND name=\"users\""
+time="2021-10-25 20:16:15" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/migration.go:8\n[0.000ms] [rows:-] SELECT * FROM `users` LIMIT 1"
+time="2021-10-25 20:16:15" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:253\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type = \"index\" AND tbl_name = \"users\" AND name = \"idx_users_deleted_at\""
+time="2021-10-25 20:16:15" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:32\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type='table' AND name=\"hosts\""
+time="2021-10-25 20:16:15" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/migration.go:8\n[7.212ms] [rows:0] CREATE TABLE `hosts` (`id` integer,`created_at` datetime,`updated_at` datetime,`deleted_at` datetime,`host_id` integer,`sn` text,`host_name` text,`region` text,`data_center` text,PRIMARY KEY (`id`,`host_id`))"
+time="2021-10-25 20:16:15" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:236\n[4.641ms] [rows:0] CREATE INDEX `idx_hosts_deleted_at` ON `hosts`(`deleted_at`)"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (6 handlers)
+[GIN-debug] POST   /api/v1/ping              --> inspur.com/cloudware/controller.Ping (6 handlers)
+[GIN-debug] GET    /api/v1/testlog           --> inspur.com/cloudware/controller.TestLog (6 handlers)
+[GIN-debug] GET    /api/v1/testpost          --> inspur.com/cloudware/controller.TestPost (6 handlers)
+[GIN-debug] GET    /api/v1/testpoststruct    --> inspur.com/cloudware/controller.TestPost (6 handlers)
+[GIN-debug] POST   /api/v1/user/register     --> inspur.com/cloudware/controller/user.UserRegister (6 handlers)
+[GIN-debug] POST   /api/v1/user/login        --> inspur.com/cloudware/controller/user.UserLogin (6 handlers)
+[GIN-debug] POST   /api/v1/host              --> inspur.com/cloudware/controller/host.AddHost (6 handlers)
+[GIN-debug] GET    /api/v1/host              --> inspur.com/cloudware/controller/host.GetHostByID (6 handlers)
+[GIN-debug] GET    /api/v1/user/me           --> inspur.com/cloudware/controller/user.UserMe (7 handlers)
+[GIN-debug] DELETE /api/v1/user/logout       --> inspur.com/cloudware/controller/user.UserLogout (7 handlers)
+[GIN-debug] Listening and serving HTTP on :3000
+time="2021-10-25 20:19:56" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/host.go:20\n[1.021ms] [rows:0] SELECT * FROM `hosts` WHERE `hosts`.`id` = \"1111\" AND `hosts`.`deleted_at` IS NULL ORDER BY `hosts`.`id` LIMIT 1"
+[GIN] 2021/10/25 - 20:19:56 | 400 |       1.535ms |       127.0.0.1 | GET      "/api/v1/host?hostid=1111"
+time="2021-10-25 20:23:10" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/host.go:27\n[7.255ms] [rows:1] INSERT INTO `hosts` (`created_at`,`updated_at`,`deleted_at`,`host_id`,`sn`,`host_name`,`region`,`data_center`) VALUES (\"2021-10-25 20:23:10.341\",\"2021-10-25 20:23:10.341\",NULL,111111,\"sheldon2\",\"sheldon80w\",\"sheldon80w\",\"data_center\")"
+[GIN] 2021/10/25 - 20:23:10 | 200 |      8.3933ms |       127.0.0.1 | POST     "/api/v1/host"
+time="2021-10-25 20:26:53" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:32\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type='table' AND name=\"users\""
+time="2021-10-25 20:26:53" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/migration.go:8\n[0.000ms] [rows:-] SELECT * FROM `users` LIMIT 1"
+time="2021-10-25 20:26:53" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:253\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type = \"index\" AND tbl_name = \"users\" AND name = \"idx_users_deleted_at\""
+time="2021-10-25 20:26:53" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:32\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type='table' AND name=\"hosts\""
+time="2021-10-25 20:26:53" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/migration.go:8\n[0.000ms] [rows:-] SELECT * FROM `hosts` LIMIT 1"
+time="2021-10-25 20:26:53" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:253\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type = \"index\" AND tbl_name = \"hosts\" AND name = \"idx_hosts_deleted_at\""
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (6 handlers)
+[GIN-debug] POST   /api/v1/ping              --> inspur.com/cloudware/controller.Ping (6 handlers)
+[GIN-debug] GET    /api/v1/testlog           --> inspur.com/cloudware/controller.TestLog (6 handlers)
+[GIN-debug] GET    /api/v1/testpost          --> inspur.com/cloudware/controller.TestPost (6 handlers)
+[GIN-debug] GET    /api/v1/testpoststruct    --> inspur.com/cloudware/controller.TestPost (6 handlers)
+[GIN-debug] POST   /api/v1/user/register     --> inspur.com/cloudware/controller/user.UserRegister (6 handlers)
+[GIN-debug] POST   /api/v1/user/login        --> inspur.com/cloudware/controller/user.UserLogin (6 handlers)
+[GIN-debug] POST   /api/v1/host              --> inspur.com/cloudware/controller/host.AddHost (6 handlers)
+[GIN-debug] GET    /api/v1/host              --> inspur.com/cloudware/controller/host.GetHostByID (6 handlers)
+[GIN-debug] GET    /api/v1/user/me           --> inspur.com/cloudware/controller/user.UserMe (7 handlers)
+[GIN-debug] DELETE /api/v1/user/logout       --> inspur.com/cloudware/controller/user.UserLogout (7 handlers)
+[GIN-debug] Listening and serving HTTP on :3000
+time="2021-10-25 20:27:15" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/host.go:20\n[0.567ms] [rows:0] SELECT * FROM `hosts` WHERE `hosts`.`id` = \"111111\" AND `hosts`.`deleted_at` IS NULL ORDER BY `hosts`.`id` LIMIT 1"
+[GIN] 2021/10/25 - 20:27:15 | 400 |       1.085ms |       127.0.0.1 | GET      "/api/v1/host?hostid=111111"
+time="2021-10-25 20:29:20" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/host.go:20\n[0.521ms] [rows:1] SELECT * FROM `hosts` WHERE \"111111\" AND `hosts`.`deleted_at` IS NULL ORDER BY `hosts`.`id` LIMIT 1"
+[GIN] 2021/10/25 - 20:29:20 | 400 |       1.276ms |       127.0.0.1 | GET      "/api/v1/host?hostid=%22111111%22"
+time="2021-10-25 20:29:30" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/host.go:27\n[8.979ms] [rows:1] INSERT INTO `hosts` (`created_at`,`updated_at`,`deleted_at`,`host_id`,`sn`,`host_name`,`region`,`data_center`) VALUES (\"2021-10-25 20:29:30.356\",\"2021-10-25 20:29:30.356\",NULL,111111,\"sheldon2\",\"sheldon80w\",\"sheldon80w\",\"data_center\")"
+[GIN-debug] [WARNING] Headers were already written. Wanted to override status code 200 with 400
+[GIN] 2021/10/25 - 20:29:30 | 400 |     10.5786ms |       127.0.0.1 | POST     "/api/v1/host"
+time="2021-10-25 20:30:27" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:32\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type='table' AND name=\"users\""
+time="2021-10-25 20:30:27" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/migration.go:8\n[0.518ms] [rows:-] SELECT * FROM `users` LIMIT 1"
+time="2021-10-25 20:30:27" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:253\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type = \"index\" AND tbl_name = \"users\" AND name = \"idx_users_deleted_at\""
+time="2021-10-25 20:30:27" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:32\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type='table' AND name=\"hosts\""
+time="2021-10-25 20:30:27" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/migration.go:8\n[0.000ms] [rows:-] SELECT * FROM `hosts` LIMIT 1"
+time="2021-10-25 20:30:27" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:253\n[0.509ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type = \"index\" AND tbl_name = \"hosts\" AND name = \"idx_hosts_deleted_at\""
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (6 handlers)
+[GIN-debug] POST   /api/v1/ping              --> inspur.com/cloudware/controller.Ping (6 handlers)
+[GIN-debug] GET    /api/v1/testlog           --> inspur.com/cloudware/controller.TestLog (6 handlers)
+[GIN-debug] GET    /api/v1/testpost          --> inspur.com/cloudware/controller.TestPost (6 handlers)
+[GIN-debug] GET    /api/v1/testpoststruct    --> inspur.com/cloudware/controller.TestPost (6 handlers)
+[GIN-debug] POST   /api/v1/user/register     --> inspur.com/cloudware/controller/user.UserRegister (6 handlers)
+[GIN-debug] POST   /api/v1/user/login        --> inspur.com/cloudware/controller/user.UserLogin (6 handlers)
+[GIN-debug] POST   /api/v1/host              --> inspur.com/cloudware/controller/host.AddHost (6 handlers)
+[GIN-debug] GET    /api/v1/host              --> inspur.com/cloudware/controller/host.GetHostByID (6 handlers)
+[GIN-debug] GET    /api/v1/user/me           --> inspur.com/cloudware/controller/user.UserMe (7 handlers)
+[GIN-debug] DELETE /api/v1/user/logout       --> inspur.com/cloudware/controller/user.UserLogout (7 handlers)
+[GIN-debug] Listening and serving HTTP on :3000
+time="2021-10-25 20:31:24" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/host.go:27\n[6.302ms] [rows:1] INSERT INTO `hosts` (`created_at`,`updated_at`,`deleted_at`,`host_id`,`sn`,`host_name`,`region`,`data_center`) VALUES (\"2021-10-25 20:31:24.091\",\"2021-10-25 20:31:24.091\",NULL,111111,\"sheldon2\",\"sheldon80w\",\"sheldon80w\",\"data_center\")"
+[GIN] 2021/10/25 - 20:31:24 | 200 |      6.8322ms |       127.0.0.1 | POST     "/api/v1/host"
+time="2021-10-25 20:31:27" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/host.go:20\n[0.000ms] [rows:1] SELECT * FROM `hosts` WHERE \"111111\" AND `hosts`.`deleted_at` IS NULL ORDER BY `hosts`.`id` LIMIT 1"
+[GIN] 2021/10/25 - 20:31:27 | 400 |      1.0395ms |       127.0.0.1 | GET      "/api/v1/host?hostid=%22111111%22"
+time="2021-10-25 20:41:19" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:32\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type='table' AND name=\"users\""
+time="2021-10-25 20:41:19" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/migration.go:8\n[5.549ms] [rows:0] CREATE TABLE `users` (`id` integer,`created_at` datetime,`updated_at` datetime,`deleted_at` datetime,`user_name` text,`password_digest` text,`nickname` text,`status` text,`avatar` text,PRIMARY KEY (`id`))"
+time="2021-10-25 20:41:19" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:236\n[4.730ms] [rows:0] CREATE INDEX `idx_users_deleted_at` ON `users`(`deleted_at`)"
+time="2021-10-25 20:41:19" level=info msg="C:/Users/think/go/pkg/mod/gorm.io/driver/sqlite@v1.1.6/migrator.go:32\n[0.000ms] [rows:-] SELECT count(*) FROM sqlite_master WHERE type='table' AND name=\"hosts\""
+time="2021-10-25 20:41:19" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/migration.go:8\n[5.625ms] [rows:0] CREATE TABLE `hosts` (`host_id` integer,`sn` text,`host_name` text,`region` text,`data_center` text,PRIMARY KEY (`host_id`))"
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (6 handlers)
+[GIN-debug] POST   /api/v1/ping              --> inspur.com/cloudware/controller.Ping (6 handlers)
+[GIN-debug] GET    /api/v1/testlog           --> inspur.com/cloudware/controller.TestLog (6 handlers)
+[GIN-debug] GET    /api/v1/testpost          --> inspur.com/cloudware/controller.TestPost (6 handlers)
+[GIN-debug] GET    /api/v1/testpoststruct    --> inspur.com/cloudware/controller.TestPost (6 handlers)
+[GIN-debug] POST   /api/v1/user/register     --> inspur.com/cloudware/controller/user.UserRegister (6 handlers)
+[GIN-debug] POST   /api/v1/user/login        --> inspur.com/cloudware/controller/user.UserLogin (6 handlers)
+[GIN-debug] POST   /api/v1/host              --> inspur.com/cloudware/controller/host.AddHost (6 handlers)
+[GIN-debug] GET    /api/v1/host              --> inspur.com/cloudware/controller/host.GetHostByID (6 handlers)
+[GIN-debug] GET    /api/v1/user/me           --> inspur.com/cloudware/controller/user.UserMe (7 handlers)
+[GIN-debug] DELETE /api/v1/user/logout       --> inspur.com/cloudware/controller/user.UserLogout (7 handlers)
+[GIN-debug] Listening and serving HTTP on :3000
+time="2021-10-25 20:41:46" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/host.go:16\n[0.000ms] [rows:0] SELECT * FROM `hosts` WHERE \"111111\" ORDER BY `hosts`.`host_id` LIMIT 1"
+[GIN] 2021/10/25 - 20:41:46 | 400 |      2.2769ms |       127.0.0.1 | GET      "/api/v1/host?hostid=%22111111%22"
+time="2021-10-25 20:41:50" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/host.go:23\n[9.183ms] [rows:1] INSERT INTO `hosts` (`sn`,`host_name`,`region`,`data_center`,`host_id`) VALUES (\"sheldon2\",\"sheldon80w\",\"sheldon80w\",\"data_center\",111111)"
+[GIN] 2021/10/25 - 20:41:50 | 200 |      10.597ms |       127.0.0.1 | POST     "/api/v1/host"
+time="2021-10-25 20:41:53" level=info msg="c:/Users/think/Desktop/cloudware_gin/model/host.go:16\n[3.007ms] [rows:1] SELECT * FROM `hosts` WHERE \"111111\" ORDER BY `hosts`.`host_id` LIMIT 1"
+[GIN] 2021/10/25 - 20:41:53 | 200 |      4.9924ms |       127.0.0.1 | GET      "/api/v1/host?hostid=%22111111%22"

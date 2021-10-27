@@ -1,0 +1,138 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "这里写描述信息`",
+        "title": "这里写标题`",
+        "termsOfService": "[http://swagger.io/terms/](http://swagger.io/terms/)`",
+        "contact": {
+            "name": "这里写联系人信息`",
+            "url": "[http://www.swagger.io/support](http://www.swagger.io/support)`",
+            "email": "support@swagger.io`"
+        },
+        "license": {
+            "name": "Apache 2.0`",
+            "url": "[http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html)`"
+        },
+        "version": "1.0`"
+    },
+    "host": "这里写接口服务的host`",
+    "basePath": "这里写base path`",
+    "paths": {
+        "/api/v1/TestPost": {
+            "post": {
+                "description": "测试post接口",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "TestPost",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Sheldon's salary is 80w",
+                        "name": "name",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "500": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/TestPostStruct": {
+            "post": {
+                "description": "测试post接口",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "TestPostStruct",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Sheldon's salary is 80w",
+                        "name": "name",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "500": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/ping": {
+            "post": {
+                "description": "状态检查接口",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Ping",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "验证参数Bearer和token空格拼接",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "500": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/testlog": {
+            "get": {
+                "description": "测试日志接口",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "TestLog",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Sheldon's salary is 80w",
+                        "name": "name",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    },
+                    "500": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    }
+}

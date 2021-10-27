@@ -1,0 +1,45 @@
+# 第1段 ===================================================================
+FROM golang:1.16.0 AS builder-cloudware
+
+ENV CGO_ENABLED=1 \
+    GOOS=linux \
+    GO111MODULE=on \
+    GOSUMDB=off \
+    GOPROXY=http://mirrors.aliyun.com/goproxy/
+
+
+COPY . /go/cloudware/
+
+WORKDIR /go/cloudware/
+
+RUN set -x \
+    && go get github.com/swaggo/swag/cmd/swag@v1.7.3 \
+    && swag -v \
+    && swag init \
+    # build project
+    && go build -a -ldflags '-s' .
+
+# 第2段 ===================================================================================
+#FROM debian:buster-slim
+# 从装好了sqlite的镜像开始
+FROM cloudware-base:v0.1
+
+USER root
+# RUN  apt-get -o Acquire::Max-FutureTime=8640000 update
+# RUN  apt-get install -y sqlite
+
+COPY --from=builder-cloudware /go/cloudware/cloudware /cloudware/
+COPY --from=builder-cloudware /go/cloudware/conf /cloudware/conf
+COPY --from=builder-cloudware /go/cloudware/build/entrypoint.sh /cloudware/entrypoint.sh
+
+COPY --from=builder-cloudware /go/cloudware/.env /cloudware/.env
+
+RUN chmod +x /cloudware/entrypoint.sh
+
+
+# EXPOSE 32001 32001
+WORKDIR /cloudware/
+ENTRYPOINT ["./entrypoint.sh"]
+
+#CMD ["sleep 3600000"]
+
